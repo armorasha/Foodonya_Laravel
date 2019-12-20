@@ -19,14 +19,24 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'email' => $faker->unique()->safeEmail,
-        'name' => $faker->name,
+
+        //'name' => $faker->name, 
+        //this sometimes gives out salutations like Prof., Dr., etc. which I dont need
+
+        'name' => $faker->firstName." ". $faker->lastName, //only need first last names
+
         'street_address' => $faker->buildingNumber." ". $faker->streetName,
         'suburb' => $faker->city,
         'state' => $faker->randomElement($array = array('SA', 'VIC', 'NSW')),
         'postcode' => $faker->numberBetween($min = 4000, $max = 6999),
         'phone' => $faker->numberBetween($min = 80000000, $max = 89999999),
         'email_verified_at' => now(),
-        'password' => 'password', // password
+
+        'password' => '$2y$10$4eWY07AVB/Br9TSgCgYUI.0r3pSKtnzUNrsAckNX/l11UOlGeiZqS', 
+        //Leave this: hashed equivalent of string 'password'. 
+        //Laravel automatically unhashes the hashed password... 
+        //...and needs a hashed password in the database, or else login wont work.
+
         'remember_token' => Str::random(10),
 
     ];

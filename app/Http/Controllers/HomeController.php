@@ -14,10 +14,11 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth'); 
-        // you add authentication for primarily protecting some pages or routes for unauthorized access.
-        //In Laravel, you can protect a route using a middelware.
-        //Laravel has a builtin 'auth' middleware
-
+        //flow of authentication: login page -> auth middleware -> protected pages like change password, edit payment details pages.
+        //a user must pass through the middleware to get to the protected pages.
+        //In Laravel, you can protect a route using a middleware. 
+        //Middleware do the appropriate rerouting based on the presence of an active login (to edit_payment_details page) or not(to you_must_login page).
+        //Laravel has this builtin 'auth' middleware.
     }
 
     /**

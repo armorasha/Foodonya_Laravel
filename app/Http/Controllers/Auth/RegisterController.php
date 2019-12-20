@@ -67,7 +67,18 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password']), 
+            //input password gets hashed here
+
+            'street_address' => $data['street_address'],
+            'suburb' => $data['suburb'],
+            'state' => $data['state'],
+            'postcode' => $data['postcode'],
+            'phone' => $data['phone'],
+
+            //These can be null, no need to enter by user
+            //'email_verified_at' and 'remember_token'
+
         ]);
     }
 }

@@ -107,7 +107,8 @@
                 <!--member link-->
                 <li class="nav-item">
                     <a class="nav-link {{Request::path() === '/member' ? 'active' : ''}}" href="/member"><i
-                            class="fas fa-user"></i> Member</a>
+                            class="fas fa-user"></i>  {{Auth::check() === true ? Auth::user()->name : " Member"}}
+                            </a>
                 </li>
 
 
@@ -137,7 +138,7 @@
                         </div>
                         <!----------->
                         <div class="subC2 col-6 col-sm-12">
-                            <p class="copyright">&copy; Raja Palanivel (YEAR)
+                            <p class="copyright">&copy; Raja Palanivel {{ now()->year }}
 
                             </p>
                         </div>
