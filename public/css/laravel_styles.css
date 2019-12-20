@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400');
+@import url('https://fonts.googleapis.com/css?family=Wendy+One');
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+/*  font-family: Arial, Helvetica, sans-serif;*/
+  color: #222;
+  position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+.align-left {
+	float: left;
+}
+.align-right {
+	float: right;
+}
+
+
+
+
+/*Backend Page Styles-----------------------------------------------------*/
+.backend-column {
+    float: left;
+    width: 50%;
+    height: 500px;
+    background-color:#3f3f3f;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.backend-column.small {
+    width: 50%;
+    height: auto;
+  }
+
+  .backend-column.alert {
+    background-color: orange;
+    margin: auto;
+  }
+
+  .backend-column.small.text {
+    width: 50%;
+/*    height: auto;*/
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: right;
+
+  }
+
+/* Clear floats after the columns */
+.backend-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.blink {
+  -webkit-animation: back-alert 1s infinite;  /* Safari 4+ */
+  -moz-animation: back-alert 1s infinite;  /* Fx 5+ */
+  -o-animation: back-alert 1s infinite;  /* Opera 12+ */
+  animation: back-alert 1s infinite;  /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes back-alert {
+  0%, 50% {
+    background-color: orange;
+  }
+  51%, 100% {
+    background-color: blue;
+  }
+}
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+/*BootStrap starts----------------------------------------------*/
+/*--------index page----------*/
+.no-padding{
+     padding:0;
+}
+
+.no-margin{
+     margin:0;
+}
+
+.carousel-inner img{
+  width: 100%;
+  /*Blur in photoshop, not here. It will increase load times*/ 
+  /*  filter: blur(4px);
+    opacity: .9;*/
+}
+
+.carousel-caption .btn{
+  font-size: 200%;
+  padding: 8px 28px;
+}
+
+
+.carousel-caption{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+/*  To stretch out to full length*/
+  width:100%;    
+  left: 0;
+}
+
+.carousel-caption h1{
+font-family: 'Wendy One', sans-serif;
+  font-size: 500%;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: yellow;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px black;
+}
+
+.carousel-caption h2{
+font-family: 'Wendy One', sans-serif;
+  font-size: 200%;
+  font-weight: 400;
+  text-shadow: 1px 1px 10px #000;
+  padding-bottom: 1rem;
+  color: yellow;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px black;
+}
+
+.carousel-caption h4{
+  font-family: 'Wendy One', sans-serif;
+  font-size: 120%;
+  font-weight: 100;
+  margin-top: 1.5rem;
+text-shadow: 0px 0px 5px black, 0px 0px 10px black;
+}
+
+.container-fluid.front-info{
+  background-color:#3f3f3f;
+  color: #d5d5d5;
+}
+
+.container-fluid.front-info h4{
+  font-weight: 400;
+}
+
+.container-fluid.front-info p{
+  font-size: 15px;
+}
+
+.tech-showcase{
+  font-family: 'Titillium Web', sans-serif;
+  color: #555;
+  background-color: #2E2E2E;
+}
+
+.tech-showcase h3{
+  font-size: 15px;
+  color: #ff4444;
+}
+
+.tech-showcase-sm{
+  font-family: 'Titillium Web', sans-serif;
+  color: #555;
+  background-color: #d9d9d9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+}
+
+
+.tech-showcase-sm h3{
+  font-size: 15px;
+  color: #e65100;
+}
+
+
+.p-indent p{
+  text-indent: 30px;
+}
+
+/*----header----*/
+.navbar-nav li {
+  white-space: nowrap; 
+  /* for no wrapping of menu items while responsive move*/
+}
+
+.nav-item a{
+/*  margin-left: 2px;	
+  margin-right: 2px;*/
+}
+
+.navbar-nav>li>a.active {
+    color: #fff !important;
+}
+
+.dropdown-menu a{
+  margin: 0;
+/*  Reset a margin from .navitem mother*/
+}
+
+
+.navbar-nav form {
+  margin-right: 10px;
+}
+
+.pc-count{
+  vertical-align: middle;
+  margin-top: -20px;
+}
+
+.cart-out a{ 
+    display: none;
+}
+
+
+
+/*---hr lines---*/
+hr { /* Overwrite default styles of hr */
+border-color: #555;   
+background-color: #555;
+color: #555;
+width: 100%;
+}
+
+hr.light{   /*100% horizontal rule*/
+width: 100%;
+margin-top: .5rem;
+margin-bottom: .5rem;
+}
+
+hr.light-75{   /*75% horizontal rule*/
+width: 75%;
+margin-top: .8rem;
+margin-bottom: .5rem;
+margin-left: auto;
+margin-right: auto;
+border-color: #d5d5d5;   
+background-color: #d5d5d5;
+color: #d5d5d5;
+}
+
+hr.light-50{   /*50% horizontal rule*/
+width: 50%;
+margin-top: .6rem;
+margin-bottom: .5rem;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+/*---headings---*/
+.topheading{
+/*  margin-top: 2rem; 
+  display: inline-block;*/
+  
+}
+
+.subheading{
+  margin-bottom: .5rem; 
+  margin-top: .5rem; 
+  color: #ff4444; /*text-danger*/
+}
+
+.form-control::placeholder {
+/*  color: inherit;*/
+  opacity: 0.3;
+}
+
+
+/*---general containers---*/
+
+.container.general {
+  
+  /*May need inline block to give top margin*/
+  /*display: inline-block;*/
+  margin-top:2rem;
+  margin-bottom:2rem;
+  /*max-width: 768px;*/
+  max-width: 576px;
+  background-color: #fafafa;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.container.general-items {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.account-toggle {
+  background-color: #f1f1f1;
+  text-align: center;
+	padding: 20px;
+	height: 100px;
+}
+
+
+/*----Footer---*/
+.bs-footer {
+color: #cce6ff;
+}
+
+.bs-footer.fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.bg-primary-dark{
+  background-color: #0d47a1; 
+/*#2979ff is equal to primary blue*/
+}
+
+.bs-footer h4{
+  margin-top: 1.25rem;
+  font-weight: 400;
+}
+
+.copyright{
+  font-size: 14px;
+}
+
+.desc{
+  color: #b3daff;
+  margin-top: 1.25rem;
+  font-size: 14px;
+  /*text-align: left;*/
+}
+
+.bs-footer a{
+  display: inline-block;
+  color: #cce6ff;
+  margin-top: .75rem;
+  margin-bottom: 1rem;
+}
+
+
+/*----card---*/
+.card-header a:hover{
+/*color: red;*/
+  text-decoration: none;
+}
+
+.alert-heading{
+    padding: 20px;
+}
+
+
+/*-----Order/Search Page------*/
+.card-text{
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.card-body button{
+position:absolute; 
+	/* This is absolute to the relative CARD div */
+	bottom:0px; 
+	left:0px;
+}
+
+
+/*-----Order Page: Accordion------*/
+.mb-0 > a {
+  display: block;
+  position: relative;
+}
+.mb-0 > a:after {
+  content: "\f078"; /* fa-chevron-down */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; /* Fix version 5.0.9 */
+  position: absolute;
+  right: 0;
+  color: #4B515D;
+}
+.mb-0 > a[aria-expanded="true"]:after {
+  content: "\f077"; /* fa-chevron-up */
+}
+
+/*---------Select page----------*/
+.container.select {
+  width: 250px;
+  margin-left: calc(50% - 125px); 
+  /*calc's -ve or other operators must have spaces around it like (50% - 125px). (50% -125px) will not work*/
+  text-align: center;
+  background-color: white;
+  /*Need inline block to give top margin with grey background*/
+  display: inline-block;
+  margin-top:50px;
+}
+
+.container.select input[type=text]{
+    width: 60px;
+    text-align: center;
+}
+
+.page-filler {
+    min-height: 90vh;
+}
+
+
+.accordion-base{
+  padding: 0;
+  display:table;
+   /* min-height:calc(100vh - 10px); */
+   height:calc(100vh - 200px);
+}
+
+
+.dull-bg {
+    background-color: #999;
+}
+
+.qtybox{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d9d9d9;
+  
+}
+
+
+/*----------View Cart Page-----------*/
+.btn-xl {
+    padding: 16px 24px;
+    font-size: 1rem; 
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+
+th, td {
+/*    font-size: .75rem;*/
+    padding: 0;
+    text-align: center;
+}
+
+.view-table>tbody>tr>td, .view-table>tbody>tr>th, .view-table>tfoot>tr>td, .view-table>tfoot>tr>th, .view-table>thead>tr>td, .view-table>thead>tr>th {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.small-button.remove {
+  background-color: #ff5c33;
+  border-radius: 50px;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #d9d9d9;
+  opacity: 0.6;
+}
+
+
+.small-button:hover{
+	opacity: 1;
+}
+
+/*Glowing button*/
+.outline-warning-attention{
+  /*-webkit-border-radius: 10px;*/
+  -webkit-animation: glowing 1500ms;
+  -moz-animation: glowing 1500ms;
+  -o-animation: glowing 1500ms;
+  animation: glowing 1500ms;
+  
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes glowing {
+  /*0% { background-color: #fafafa; -webkit-box-shadow: 0 0 3px #fafafa; }
+  50% { background-color: #FF8800; -webkit-box-shadow: 0 0 40px #FF8800; }
+  100% { background-color: #fafafa; -webkit-box-shadow: 0 0 3px #fafafa; }*/
+  
+  0% { background-color: #FF8800; -webkit-box-shadow: 0 0 40px #FF8800; }
+  100% { background-color: inherit; -webkit-box-shadow: 0 0 0px inherit; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #FF8800; -moz-box-shadow: 0 0 40px #FF8800; }
+  100% { background-color: inherit; -moz-box-shadow: 0 0 0px inherit; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #FF8800; box-shadow: 0 0 40px #FF8800; }
+  100% { background-color: inherit; box-shadow: 0 0 0px inherit; }
+}
+
+@keyframes glowing {
+  0% { background-color: #FF8800; box-shadow: 0 0 40px #FF8800; }
+  100% { background-color: inherit; box-shadow: 0 0 0px inherit; }
+  
+  /*#FF8800 #ffbb33 #ffffff #fafafa*/
+}
+
+
+
+/*----------Payment Page-----------*/
+.container.rounded {
+    border-radius: 4rem !important;
+    text-align: center;
+    /*border-width:2px !important;*/
+}
+
+
+
+.rounded-content{
+  padding: 20px 40px;
+  margin: 0;
+}
+
+.payment{
+  text-align: center;
+}
+
+.payment i{
+  color: grey;
+}
+
+/*----------Member Pages-----------*/
+.btn-pink{
+  background-color: #ec407a;
+  color: white;
+}
+
+.btn-pink:hover{
+  color: white; /*This is required, or else on hover button text will go black*/
+}
+
+
+
+/*----------About Page-----------*/
+.list-display li {
+  margin-bottom:.4rem;
+  font-size:1.1rem;
+}
+
+.list-checkmarks {
+  padding-left:1.5rem;
+}
+
+.list-checkmarks li {
+  list-style-type:none;
+  padding-left:1rem;
+}
+
+.list-checkmarks li:before {    
+font-family: 'Font Awesome 5 Free';
+content: "\f00c";
+font-weight: 900; /* Fix version 5.0.9 */
+margin:0 10px 0 -28px;
+color: #17aa1c;
+}
+
+.list-two li:before{    
+font-family: 'Font Awesome 5 Free';
+content: "\f192";
+color: #FF8800;
+}
+
+/*----------B2C login Page-----------*/
+/*h1 {
+  color: blue;
+  text-align: center;
+}
+.intro h2 {
+  text-align: center; 
+}
+.entry {
+  width: 400px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+.divider h2 {
+  text-align: center; 
+}
+.create {
+  width: 400px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}*/
+
+
+
+
+
+
+
+
+
+/*---Media Queries --*/
+@media (max-width: 1200px) {
+  .carousel-caption{
+        top: 35%;
+  }
+}
+  
+@media (max-width: 992px) {
+  .carousel-caption{
+        top: 30%;
+  }
+  
+  .tech-showcase h2{
+    font-size: 300%;
+  }
+  
+  .tech-showcase i{
+    font-size: 250%;
+  }
+
+}
+
+@media (max-width: 991px) { /*This 991 is for navbar collapse only*/  
+  .cart-out a{
+    display: block;
+  }
+  
+  .cart-in a{
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+      
+    .carousel-caption{
+      top: 25%;
+    }
+
+    .carousel-caption h1{
+      font-size: 380%;
+    }
+
+    .carousel-caption h2{
+      font-size: 140%;
+      font-weight: 400;
+    }
+
+    .carousel-caption .btn{
+      font-size: 150%;
+      padding: 8px 14px;
+    }
+
+    .carousel-caption h4{
+      font-size: 100%;
+      font-weight: 400;
+    }
+    
+    .container-fluid.front-info h2{
+      font-size: 3.6vh;
+    }
+    
+    .container-fluid.front-info p{
+      font-size: 1.7vmax;
+
+      /*    DONT DELETE
+
+      Well, my solution is sort of hack, but it works and I am using it.
+      1vw = 1% of viewport width
+      1vh = 1% of viewport height
+      1vmin = 1vw or 1vh, whichever is smaller
+      1vmax = 1vw or 1vh, whichever is larger
+
+      h1 {
+        font-size: 5.9vw;
+      }
+      h2 {
+        font-size: 3.0vh;
+      }
+      p {
+        font-size: 2vmin; (1.7vmax works well for Raja)
+      }*/
+    }
+    
+    .tech-showcase h2{
+      font-size: 250%;
+    }
+   
+    .tech-showcase h3{
+      font-size: 90%;
+    }
+  
+}
+
+
+
+@media (max-width: 576px) {
+      .carousel-inner img{
+/*        resizing the image for phone displays*/
+        width: 150%;
+        height: 150%;
+/*      transform is to center the image*/
+        transform: translate(-30%, 0%)
+      }
+      
+      .carousel-caption{
+        top: 40%;
+      }
+
+      .carousel-caption h1{
+        font-size: 380%;
+        padding-bottom: .5rem;
+      }
+
+      .carousel-caption h2{
+        font-size: 120%;
+        padding-bottom: 1rem;
+      }
+      
+      .carousel-caption .btn{
+        font-size: 150%;
+        padding: 6px 12px;
+        
+      }
+      
+    .carousel-caption h4{
+      font-size: 90%;
+      padding-top: 0rem;
+      }
+      
+    th, td {
+      font-size: .75rem;
+      }
+      
+    .container.general h4{
+      font-size: 120%;
+      }
+      
+      .container.general h5{
+      font-size: 90%;
+      }
+      
+      .bs-footer h4{
+        margin-top: .75rem;
+      }
+
+      .copyright{
+        margin-top: 1.2rem;
+        margin-bottom: .5rem;
+      }
+
+      .desc{
+        margin-top: 0;
+        font-size: .75rem;
+      }
+
+      .bs-footer a{
+        font-size: .75rem;
+        margin-top: .25rem;
+        margin-bottom: .5rem;        
+      }
+      
+      .C3{
+        padding: 0;       
+      }
+      
+      .payment i{
+      font-size: 200%;
+      }
+      
+      .container.rounded {
+      border-radius: 2rem !important;
+      }
+      
+      .rounded-content{
+        padding: 10px 20px;
+      }
+
+      .tech-showcase h2{
+        font-size: 200%;
+      }
+      
+      .tech-showcase-sm h2{
+        font-size: 200%;
+      }
+      
+      .tech-showcase h3{
+        font-size: 90%;
+      }
+
+      .tech-showcase-sm i{
+        font-size: 250%;
+      }
+
+}
+
+@media (max-width: 500px) {
+      .carousel-caption{
+        top: 35%;
+      }
+
+      .carousel-caption h1{
+        font-size: 350%;
+      }
+
+      .carousel-caption h2{
+        font-size: 110%;
+      }
+      
+      .carousel-caption .btn{
+        font-size: 145%;
+      }
+      
+      .carousel-caption h4{
+      font-size: 80%;
+      }     
+
+}
+
+@media (max-width: 430px) {
+      .carousel-caption{
+        top: 30%;
+      }
+
+      .carousel-caption h1{
+        font-size: 300%;
+      }
+
+      .carousel-caption h2{
+        font-size: 100%;
+      }
+      
+      .carousel-caption .btn{
+        font-size: 135%;
+      }
+      
+      .carousel-caption h4{
+      font-size: 75%;
+    }
+}
+
+@media (max-width: 380px) {
+      .carousel-caption{
+        top: 25%;
+      }
+
+      .carousel-caption h1{
+        font-size: 275%;
+      }
+
+      .carousel-caption h2{
+        font-size: 80%;
+      }
+      
+      .carousel-caption .btn{
+        font-size: 120%;
+      }
+      
+/*      .carousel-caption h4{
+      font-size: 60%;
+    }*/
+    
+     .payment i{
+      font-size: 150%;
+      }
+}
+
+
+/*--------------------EOF-----------------------------------------------------*/
+
+
+
+
+
+
+

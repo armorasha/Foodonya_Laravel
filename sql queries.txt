@@ -1,0 +1,56 @@
+ALTER TABLE products
+    ADD CONSTRAINT fk_to_category_id
+    FOREIGN KEY (categories_category_id)
+    REFERENCES categories(category_id);
+
+SELECT MIN(products_item_id) FROM `sizes` GROUP BY products_item_id
+
+
+update sizes
+set size_code = FIND_IN_SET('Large','Party','Square','Feast','Small','Medium','XLarge','SmallCuts','FourSq','Nibble','Calzone');
+
+update sizes set size_code = (case floor(rand()*9) 
+when 0 then 'Large' 
+when 1 then 'Party' 
+when 2 then 'Square' 
+when 3 then 'Feast' 
+when 4 then 'Small' 
+when 5 then 'Medium' 
+when 6 then'XLarge' 
+when 7 then 'Nibble' 
+when 8 then 'Calzone'
+ end)
+
+ UPDATE sizes AS t
+JOIN 
+    ( SELECT MIN(products_item_id) MinID
+      FROM sizes
+      GROUP BY products_item_id
+      HAVING COUNT(*) > 1
+    ) AS m 
+    ON t.products_item_id = m.MinID
+
+SET default_size = 1;
+
+UPDATE sizes SET default_size = 0
+update sizes set default_size =  1 where products_item_id = 1  limit 1;
+
+
+select * from ( -- order by the "time" column descending to get the "most recent" row select * from sizes order by products_item_id ASC ) x group by products_item_id
+
+update sizes s
+INNER JOIN products p ON s.products_item_id = p.item_id
+set default_size = 1
+
+
+
+update sizes set default_size =  1 where products_item_id =61  limit 1;
+update sizes set default_size =  1 where products_item_id =62  limit 1;
+update sizes set default_size =  1 where products_item_id =63  limit 1;
+update sizes set default_size =  1 where products_item_id =64  limit 1;
+update sizes set default_size =  1 where products_item_id =65  limit 1;
+update sizes set default_size =  1 where products_item_id =66  limit 1;
+update sizes set default_size =  1 where products_item_id =67  limit 1;
+update sizes set default_size =  1 where products_item_id =68  limit 1;
+update sizes set default_size =  1 where products_item_id =69  limit 1;
+update sizes set default_size =  1 where products_item_id =70  limit 1;
