@@ -45,8 +45,7 @@ class UserController extends Controller
             Session::flash('alert-class', 'alert-danger');
         }
 
-        //return view('auth.account');
-        return view('welcome');
+        return redirect('/'); //must 'redirect' not 'view' for flash message to disappear after once
 
     }
 

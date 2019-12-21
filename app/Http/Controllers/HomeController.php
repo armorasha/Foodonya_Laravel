@@ -34,6 +34,8 @@ class HomeController extends Controller
         Session::flash('message', 'Welcome '. Auth::user()->name.'!');
         Session::flash('alert-class', 'alert-warning');
 
-        return view('welcome'); //was 'home'
+        //return view('welcome'); //was 'home'
+        return redirect('/'); //must 'redirect' not 'view' for flash message to disappear after once
+
     }
 }

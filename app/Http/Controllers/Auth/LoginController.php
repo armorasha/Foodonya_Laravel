@@ -54,6 +54,6 @@ class LoginController extends Controller
         Session::flash('message', 'You are logged out. See you soon!');
         Session::flash('alert-class', 'alert-success');
 
-        return view('welcome');
+        return redirect('/'); //must 'redirect' not 'view' for flash message to disappear after once
     }
 }
