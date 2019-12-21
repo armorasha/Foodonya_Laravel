@@ -6,6 +6,11 @@
 
 <!-- Main image with Buttons -->
 <div class="container-fluid no-padding front-pizza">
+
+    @if(Session::has('message'))
+    <p class="my-0 alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+    @endif
+
     <div id="myCarousel" class="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">

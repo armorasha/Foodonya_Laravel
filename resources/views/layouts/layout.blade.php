@@ -79,7 +79,7 @@
             <li class="nav-item">
                 {{-- Laravel Request path- Give me the current browser address path, if it is equal
                     to home page, then set this <a> tag as active color, if not do nothing --}}
-                    <a class="nav-link {{Request::path() === '/' ? 'active' : ''}}" 
+                    <a class="nav-link {{Request::getRequestUri() === '/' ? 'active' : ''}}"
                     href="/"><i class="fas fa-home"></i> Home</a>
                 </li>
 
@@ -89,7 +89,7 @@
                 <li class="nav-item">
                     {{-- Laravel Request path- Give me the current browser address path, if it is equal
                     to menu page, then set this <a> tag as active color, if not do nothing --}}
-                    <a class="nav-link {{Request::path() === '/menu' ? 'active' : ''}}" href="/menu"><i
+                    <a class="nav-link {{Request::getRequestUri() === '/menu' ? 'active' : ''}}" href="/menu"><i
                             class="fas fa-book-open"></i> Menu</a>
                 </li>
 
@@ -98,18 +98,73 @@
                 <!--cart link-->
                 <!--Inside cart bar. Shows by default, hidden when navbar collapse using media query-->
                 <li class="nav-item cart-in">
-                    <a class="nav-link {{Request::path() === '/cart' ? 'active' : ''}}" href="/cart"><i
+                    <a class="nav-link {{Request::getRequestUri() === '/cart' ? 'active' : ''}}" href="/cart"><i
                             class="fas fa-shopping-cart">
-                        </i> Cart <span class="badge badge-danger pc-count">?</span></a>
+                        </i> Cart <span
+                            class="badge badge-danger pc-count">{{ Cart::content()->count() }}</span></a>
+                            {{-- If "Hawaiian Pizza - qty 3" in cart, {{ Cart::count() }} will return the quantity
+                            total(3), not item total(1)--}}
                 </li>
 
 
                 <!--member link-->
-                <li class="nav-item">
-                    <a class="nav-link {{Request::path() === '/member' ? 'active' : ''}}" href="/member"><i
-                            class="fas fa-user"></i>  {{Auth::check() === true ? Auth::user()->name : " Member"}}
+                {{-- if member already logged in show this --}}
+                @if ( Auth::check() === true )
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{Request::getRequestUri() === '/member' ? 'active' : ''}}"
+                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="fas fa-user"></i> {{ Auth::user()->name }}
+                        </a>
+
+                        {{-- KEEP THIS --}}
+                        {{-- {{Auth::check() === true ? Auth::user()->name : " Member"}}  --}} 
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {{-- <a class="dropdown-item" href="/user/account">Account</a> --}}
+                            {{-- Account viewing needs a POST request so that malicious sites cannot view your details using cross site forgery.
+                             a form can send a POST request, so using a form to Account viewing--}}
+                            <a class="dropdown-item" href="/user/account"
+                                onclick="event.preventDefault(); document.getElementById('frm-account').submit();">
+                                Account
                             </a>
+                            <form id="frm-account" action="/user/account" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
+                            <a class="dropdown-item disabled" href="#">Settings</a>
+                            <div class="dropdown-divider"></div>
+
+                            {{-- Logout needs a POST request so that malicious sites cannot log you out using cross site forgery.
+                             a form can send a POST request, so using a form to logout--}}
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                Logout
+                            </a>
+                            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                
+                @else
+                {{-- if no logged in detected route to login page --}}
+                <li class="nav-item">
+                    <a class="nav-link {{Request::getRequestUri() === '/member' ? 'active' : ''}}" href="/login"><i
+                            class="fas fa-user"></i> Member
+                    </a>
                 </li>
+
+                @endif
+                {{-- <li class="nav-item">
+                    <a class="nav-link {{Request::getRequestUri() === '/member' ? 'active' : ''}}" href="/member"><i
+                            class="fas fa-user"></i> ? {{Auth::check() === true ? Auth::user()->name : " Member"}}
+                            </a>
+                </li> --}}
+
+                
+
+
 
 
             </ul>

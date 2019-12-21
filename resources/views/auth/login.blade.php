@@ -144,7 +144,7 @@
     </form>
 
     <div class="container-fluid general-items account-toggle">
-        <p class="my-2">Don't have an account? <a href="../php/signup.php">Sign up</a>, it's free.</p>
+        <p class="my-2">Don't have an account? <a href="{{ route('register') }}">Sign up</a>, it's free.</p>
     </div>
 
 </div>

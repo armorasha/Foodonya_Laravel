@@ -86,9 +86,15 @@ Route::post('/paymentAjax/{paymentSelection}', 'CartController@getPaymentContent
 
 Auth::routes(); //various routes for registration system. routes()method is that cleanly encapsulates all the login and register routes.
 
-Route::get('/home', 'HomeController@index')->name('home'); //If there is an active login this takes to you_are_logged_in home page, this takes to login page if no one is logged in.
-
+//Route::get('/home', 'HomeController@index')->name('home'); //If there is an active login this takes to you_are_logged_in home page, this takes to login page if no one is logged in.
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/app', function () { //This takes to the front page/dashboard which is the app.blade.php file.
 //     return view('layouts.app');
 // });
+
+Route::post('/user/account', function () {
+    return view('auth.account');
+});
+
+Route::post('/user/update', 'UserController@update2')->middleware('auth');

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +31,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        Session::flash('message', 'Welcome '. Auth::user()->name.'!');
+        Session::flash('alert-class', 'alert-success');
+
+        return view('welcome'); //was 'home'
     }
 }

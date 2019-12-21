@@ -444,7 +444,7 @@
 
         </div>
 
-        <p class='mt-5'>By creating an account you agree with our <a href="terms.php">Terms & Conditions</a>.</p>
+        <p class='mt-5'>By creating an account you agree with our <a href="/terms">Terms & Conditions</a>.</p>
         <button id="captchaBtn" type="submit"
             class="btn btn-success btn-block btn-xl mb-2">{{ __('Register') }}</button>
         <small id="emailHelp" class="form-text text-danger">*Try placing an order. This is a demo web app. Check out the
@@ -454,7 +454,7 @@
     </form>
 
     <div class="container-fluid general-items account-toggle">
-        <p>Already have an account? <a href="login.php">Log in</a> here.</p>
+        <p>Already have an account? <a href="{{ route('login') }}">Log in</a> here.</p>
     </div>
 </div>
 
