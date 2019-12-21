@@ -35,7 +35,7 @@ class UserController extends Controller
         //dd($status);
         
         if ($status) {
-            Auth::setUser($user); //for refetching updated user from the db.
+            Auth::setUser($user); //if update success, overwrite existing user with updated one instead of refetching from the db.
 
             Session::flash('message', 'Yours details have been updated!');
             Session::flash('alert-class', 'alert-success');

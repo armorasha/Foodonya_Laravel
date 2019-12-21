@@ -131,7 +131,7 @@
     </form>
 
     <button type="button" class="btn btn-secondary btn-block btn-xl"
-        onclick="location.href='../php/order.php'">Cancel</button>
+        onclick="location.href='/'">Cancel</button>
 
 </div>
 
