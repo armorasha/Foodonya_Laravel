@@ -8,9 +8,9 @@
 
 <div class="container general">
 
-     @if(Session::has('message'))
-     <p class="my-0 alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p><br>
-     @endif
+    @if(Session::has('message'))
+    <p class="my-0 alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p><br>
+    @endif
 
     <h4 class="topheading">Member</h4>
     <hr class="light">
@@ -18,38 +18,66 @@
     {{-- Autofill using SESSION customer data --}}
 
     <form action="/user/update" method="post">
-            @csrf
+        @csrf
 
         <div class="container general-items">
             <h5 class="subheading">Update Account Details</h5>
 
             {{-- if hidden existingCustomer id is NO, payment.js will validate both these 
             address data and credit card info. --}}
+
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="cust_name" placeholder="John Citizen" name="cust_name"
-                    value="{{ Auth::user()->name }}">
-                <span id="nameError" style="color: red; font-weight: normal;"></span>
-            </div>
-            <div class="form-group">
-                <label for="street">Street address</label>
-                <input type="text" class="form-control" id="street" placeholder="1000 Model Street" name="street"
-                    value="{{ Auth::user()->street_address }}">
-                <span id="streetError" style="color: red; font-weight: normal;"></span>
-            </div>
-            <div class="form-group">
-                <label for="suburb">Suburb</label>
-                <input type="text" class="form-control" id="suburb" placeholder="Moana" name="suburb"
-                    value="{{ Auth::user()->suburb }}">
-                <span id="suburbError" style="color: red; font-weight: normal;"></span>
-            </div>
-            <div class="form-group">
-                <label for="postcode">Postcode</label>
-                <input type="text" class="form-control" id="postcode" placeholder="5000" name="postcode"
-                    value="{{ Auth::user()->postcode }}">
-                <span id="postcodeError" style="color: red; font-weight: normal;"></span>
+                <label for="name">{{ __('Name') }}</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                    aria-describedby="nameHelp" placeholder="John Smithy" name="name" value="{{ Auth::user()->name }}"
+                    required autocomplete="name" autofocus>
+
+                @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
 
+            <div class="form-group">
+                <label for="street_address">{{ __('Street address') }}</label>
+                <input type="text" class="form-control @error('street_address') is-invalid @enderror"
+                    id="street_address" aria-describedby="street_addressHelp" placeholder="101 South street"
+                    name="street_address" value="{{ Auth::user()->street_address }}" required
+                    autocomplete="street_address" autofocus>
+
+                @error('street_address')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="suburb">{{ __('Suburb') }}</label>
+                <input type="text" class="form-control @error('suburb') is-invalid @enderror" id="suburb"
+                    aria-describedby="suburbHelp" placeholder="Moanet" name="suburb" value="{{ Auth::user()->suburb }}"
+                    required autocomplete="suburb" autofocus>
+
+                @error('suburb')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="postcode">{{ __('Postcode') }}</label>
+                <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="postcode"
+                    aria-describedby="postcodeHelp" placeholder="5000" name="postcode"
+                    value="{{ Auth::user()->postcode }}" required autocomplete="postcode" autofocus>
+
+                @error('postcode')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
 
             {{-- {{ $state = Auth::user()->state}} --}}
             {{-- {{dd($state)}} --}}
@@ -77,19 +105,26 @@
                 </select>
             </div>
 
+
+
             <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" placeholder="0444222000" name="phone"
-                    value="{{ Auth::user()->phone }}">
-                <span id="phoneError" style="color: red; font-weight: normal;"></span>
+                <label for="phone">{{ __('Phone') }}</label>
+                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
+                    aria-describedby="phoneHelp" placeholder="0400222777" name="phone" value="{{ Auth::user()->phone }}"
+                    required autocomplete="phone" autofocus>
+
+                @error('phone')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
 
         </div>
 
-
         <button type="submit" class="btn btn-pink btn-block btn-xl mb-4">Update</button>
 
-            {{-- <button id="captchaBtn" type="submit"
+        {{-- <button id="captchaBtn" type="submit"
                 class="btn btn-success btn-block btn-xl mb-2">{{ __('Register') }}</button> --}}
     </form>
 

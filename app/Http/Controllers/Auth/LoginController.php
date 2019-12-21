@@ -23,8 +23,10 @@ class LoginController extends Controller
     |
     */
 
+    // use AuthenticatesUsers;
+
     use AuthenticatesUsers {
-        logout as performLogout;
+        logout as performLogout; //I addded this
     }
 
     /**
@@ -44,14 +46,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    //I added this
+    //I added this. Custom logout that throws message with custom reroute
     public function logout(Request $request)
     {
         $this->performLogout($request);
 
         Session::flash('message', 'You are logged out. See you soon!');
         Session::flash('alert-class', 'alert-success');
-        
+
         return view('welcome');
     }
 }

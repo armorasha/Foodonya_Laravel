@@ -97,4 +97,5 @@ Route::post('/user/account', function () {
     return view('auth.account');
 });
 
-Route::post('/user/update', 'UserController@updateUser')->middleware('auth');
+Route::post('/user/update', 'UserController@update')->middleware('auth'); 
+//->middleware('auth') means this page is set by me behind the authentication middleware, no un-authorised entry allowed.
