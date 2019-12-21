@@ -12,6 +12,8 @@
     <p class="my-0 alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p><br>
     @endif
 
+    {{-- {{ Auth::user()->refresh() }} --}}
+
     <h4 class="topheading">Member</h4>
     <hr class="light">
 

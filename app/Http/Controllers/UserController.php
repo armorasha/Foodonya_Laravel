@@ -30,15 +30,23 @@ class UserController extends Controller
         $user->postcode = $request->postcode;
         $user->state = $request->state;
         $user->phone = $request->phone;
-        $user->save(); //then save
+        $status = $user->save(); //then save
+        
+        //dd($status);
+        
+        if ($status) {
+            Auth::setUser($user); //for refetching updated user from the db.
 
-        //Auth::user(); //for refetching updated user from the db.
-        $user->refresh();
+            Session::flash('message', 'Yours details have been updated!');
+            Session::flash('alert-class', 'alert-success');
+        }
+        else {
+            Session::flash('message', 'Details not updated!');
+            Session::flash('alert-class', 'alert-danger');
+        }
 
-        Session::flash('message', 'Yours details updated!');
-        Session::flash('alert-class', 'alert-success');
-
-        return view('auth.account');
+        //return view('auth.account');
+        return view('welcome');
 
     }
 
