@@ -97,4 +97,4 @@ Route::post('/user/account', function () {
     return view('auth.account');
 });
 
-Route::post('/user/update', 'UserController@update2')->middleware('auth');
+Route::post('/user/update', 'UserController@updateUser')->middleware('auth');

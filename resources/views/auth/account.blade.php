@@ -1,17 +1,24 @@
-{{-- I made this page, not the laravel's auth made it --}}
+{{-- I added this page, not the laravel's auth made it --}}
 @extends('layouts.layout')
 
 
 @section('content')
 
 <!-- Page Content -->
+
 <div class="container general">
+
+     @if(Session::has('message'))
+     <p class="my-0 alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p><br>
+     @endif
+
     <h4 class="topheading">Member</h4>
     <hr class="light">
 
     {{-- Autofill using SESSION customer data --}}
 
     <form action="/user/update" method="post">
+            @csrf
 
         <div class="container general-items">
             <h5 class="subheading">Update Account Details</h5>
@@ -80,11 +87,10 @@
         </div>
 
 
-        <button type="submit" class="btn btn-pink btn-block btn-xl mb-4"
-            >Update</button>
+        <button type="submit" class="btn btn-pink btn-block btn-xl mb-4">Update</button>
 
-            <button id="captchaBtn" type="submit"
-                class="btn btn-success btn-block btn-xl mb-2">{{ __('Register') }}</button>
+            {{-- <button id="captchaBtn" type="submit"
+                class="btn btn-success btn-block btn-xl mb-2">{{ __('Register') }}</button> --}}
     </form>
 
     <button type="button" class="btn btn-secondary btn-block btn-xl"

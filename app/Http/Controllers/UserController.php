@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UserController extends Controller
 {
@@ -27,7 +31,10 @@ class UserController extends Controller
         //     'all_categories' => $cat_query_result, 'all_products' => $item_query_result,
         // ]);
 
-        return view('/terms');
+        Session::flash('message', 'Your details updated!');
+        Session::flash('alert-class', 'alert-success');
+
+        return view('auth.account');
 
     }
    

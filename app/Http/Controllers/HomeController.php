@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function index()
     {
         Session::flash('message', 'Welcome '. Auth::user()->name.'!');
-        Session::flash('alert-class', 'alert-success');
+        Session::flash('alert-class', 'alert-warning');
 
         return view('welcome'); //was 'home'
     }
