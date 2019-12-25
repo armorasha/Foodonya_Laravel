@@ -36,6 +36,8 @@ class UserController extends Controller
         
         if ($status) {
             Auth::setUser($user); //if update success, overwrite existing user with updated one instead of refetching from the db.
+            //This is required for updated user details like name and delivery address to appear in various pages
+            //If not using this, the pages will still show old user details from the session, eventhough the db is updated.
 
             Session::flash('message', 'Yours details have been updated!');
             Session::flash('alert-class', 'alert-success');

@@ -97,5 +97,11 @@ Route::post('/user/account', function () {
     return view('auth.account');
 });
 
-Route::post('/user/update', 'UserController@update')->middleware('auth'); 
+Route::post('/user/update', 'UserController@update')->middleware('auth');
 //->middleware('auth') means this page is set by me behind the authentication middleware, no un-authorised entry allowed.
+
+Route::fallback(function () {  //this fallback method is to send Graceful error to user. Disable this while in development
+    //abort(404);
+    //abort(403, 'Unauthorized action.');
+    abort(403, 'A graceful error using fallback function. Disable this in web.php to see the error.');  
+});
