@@ -50,8 +50,9 @@
         <div class="d-flex ml-auto mr-3">
             <ul class="navbar-nav">
                 <li class="nav-item cart-out">
-                    <a class="nav-link align-right" href="/php/view_cart.php"><i class="fas fa-shopping-cart">
-                        </i> Cart <span class="badge badge-danger pc-count">'??'</span></a>
+                    <a class="nav-link align-right {{Request::getRequestUri() === '/cart' ? 'active' : ''}}"
+                        href="/cart"><i class="fas fa-shopping-cart">
+                        </i> Cart <span class="badge badge-danger pc-count">{{ Cart::content()->count() }}</span></a>
                 </li>
             </ul>
         </div>
