@@ -1,6 +1,8 @@
 # E-Commerce web application using Laravel PHP Framework
 This is a Laravel version of the E-Commerce website www.Foodonya.com originally built on vanilla PHP v7.2. Visit www.Foodonya.com for demo.
 
+## Web Application Preview
+![Image of website preview](https://raw.githubusercontent.com/armorasha/Foodonya_Laravel/master/public/images/foodonya_frontpage.JPG?token=AJCDMCPKLBTY2LVDLUEZN2C6HKH5I)
 
 ## Project Features
 * MVC: Model-View-Controller architecture
@@ -19,7 +21,7 @@ This is a Laravel version of the E-Commerce website www.Foodonya.com originally 
 
 
 ## License and Usage
-This public repository can only be used for educational purposes.
+This public repository can only be used for educational purposes and cannot be used for any commercial purposes.
 
 ## Appendix 
 ### About Laravel Framework
