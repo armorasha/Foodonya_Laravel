@@ -1,27 +1,26 @@
-# Foodonya.com using Laravel PHP Framework
+# E-Commerce web application using Laravel PHP Framework
 This is a Laravel version of the E-Commerce website www.Foodonya.com originally built on vanilla PHP v7.2. Visit www.Foodonya.com for demo.
 
-## Features
+## Features used
 * MVC: Model-View-Controller architecture
 * Blade templates
 * Migrations
 * Factories
 * Seeders
-* Faker (Standard and Restaurant)
+* Faker: Standard, FakerRestaurant
 * Artisan
 * Data-binding
 * User integration scaffolding
 * CSRF protection
-* Laravel libraries used/planned: LaravelShoppingcart-bumbummen99 version for laravel 6.0+ support, Stripe payment (Cashier), Social login system (Socialite), Oauth (passport)
+* Laravel libraries used/scoped: LaravelShoppingcart-bumbummen99 version for laravel 6.0+ support, Stripe payment (Cashier), Social login system (Socialite), Oauth (passport)
 * MySQL
 * Git version control
 
 
 ## License
-This public repository can only be used for educational purposes only.
+This public repository can only be used for educational purposes.
 
 ## About Laravel
-
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
