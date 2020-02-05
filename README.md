@@ -1,7 +1,8 @@
 # E-Commerce web application using Laravel PHP Framework
 This is a Laravel version of the E-Commerce website www.Foodonya.com originally built on vanilla PHP v7.2. Visit www.Foodonya.com for demo.
 
-## Features used
+
+## Project Features
 * MVC: Model-View-Controller architecture
 * Blade templates
 * Migrations
@@ -17,10 +18,11 @@ This is a Laravel version of the E-Commerce website www.Foodonya.com originally 
 * Git version control
 
 
-## License
+## License and Usage
 This public repository can only be used for educational purposes.
 
-## About Laravel
+## Appendix 
+### About Laravel Framework
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
