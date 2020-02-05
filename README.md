@@ -2,7 +2,7 @@
 This is a Laravel version of the E-Commerce website www.Foodonya.com originally built on vanilla PHP v7.2. Visit www.Foodonya.com for demo.
 
 ## Web Application Preview
-![Image of website preview](https://raw.githubusercontent.com/armorasha/Foodonya_Laravel/master/public/images/foodonya_frontpage.JPG?token=AJCDMCPKLBTY2LVDLUEZN2C6HKH5I)
+![Image of website preview](https://raw.githubusercontent.com/armorasha/Foodonya_Laravel/master/public/images/foodonya_frontpage.JPG)
 
 ## Project Features
 * MVC: Model-View-Controller architecture
